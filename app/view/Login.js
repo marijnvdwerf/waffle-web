@@ -49,6 +49,7 @@ Ext.define('Waffle.view.Login', {
                 itemId: 'logInButton',
                 ui: 'action',
                 padding: '10px',
+                margin: '8px',
                 text: 'Log In'
             }
         ]
