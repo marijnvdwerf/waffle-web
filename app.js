@@ -52,8 +52,8 @@ Ext.application({
         // Destroy the #appLoadingIndicator element
         Ext.fly('appLoadingIndicator').destroy();
 
-        // Initialize the main view
-        Ext.Viewport.add(Ext.create('Waffle.view.Main'));
+        // Initialize the login view
+        Ext.Viewport.add(Ext.create('Waffle.view.Login'));
     },
 
     onUpdated: function() {
