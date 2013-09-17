@@ -16,10 +16,6 @@ Ext.define('Waffle.view.Schedule', {
 
         this.setItems([
             {
-                xtype: 'toolbar',
-                docked: 'top'
-            },
-            {
                 xclass: 'Ext.ux.TouchCalendarView',
                 itemId: 'calendarView',
                 id: 'calendar',
@@ -34,6 +30,13 @@ Ext.define('Waffle.view.Schedule', {
                 })]
             }
         ]);
+
+
+
+        this.items.items[0].on('eventtap', function(event){
+            var detailsView = Ext.create('Waffle.view.Lesson');
+            this.up('main').push(detailsView)
+        });
 
         Ext.Ajax.request({
             url: "http://waffle.marijnvdwerf.nl/api/me",
