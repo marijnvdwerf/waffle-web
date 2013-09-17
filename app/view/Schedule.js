@@ -34,7 +34,7 @@ Ext.define('Waffle.view.Schedule', {
 
         this.items.items[0].on('eventtap', function (event) {
             var detailsView = Ext.create('Waffle.view.Lesson');
-            this.up('main').push(detailsView)
+            this.up('mainview').push(detailsView)
         });
     }
 
