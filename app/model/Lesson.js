@@ -27,6 +27,11 @@ Ext.define('Waffle.model.Lesson', {
                 name: 'end',
                 type: 'date',
                 dateFormat: 'c'
+            },
+            {
+                name: 'colour',
+                type: 'string',
+                defaultValue: '#abcdef'
             }
         ]
     }

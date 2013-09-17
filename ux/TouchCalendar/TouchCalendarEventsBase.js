@@ -198,6 +198,7 @@ Ext.define('Ext.ux.TouchCalendarEventsBase', {
 				(hasWrapped ? ' wrap-start' : ''),
 				eventRecord.get(this.getPlugin().getCssClassField())
 			];
+        var colour = eventRecord.get(this.getPlugin().getColourField());
 
 
 		// create the event bar
@@ -205,6 +206,7 @@ Ext.define('Ext.ux.TouchCalendarEventsBase', {
 			tag: 'div',
 			html: this.getPlugin().getEventBarTpl().apply(eventRecord.data),
 			eventID: record.get('EventID'),
+            style: 'background-color: ' + colour,
 			cls: cssClasses.join(' ')
 		}, true);
 

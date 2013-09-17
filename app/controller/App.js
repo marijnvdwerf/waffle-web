@@ -25,6 +25,7 @@ Ext.define('Waffle.controller.App', {
                     var scheduleData = Ext.JSON.decode(response.responseText);
                     scheduleData.lessons.forEach(function (lessonData) {
                         var lesson = new Waffle.model.Lesson(lessonData);
+                        lesson.set('colour', schedule.color);
                         lessonStore.add(lesson);
                     });
                 },
