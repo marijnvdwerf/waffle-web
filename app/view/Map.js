@@ -2,6 +2,7 @@ Ext.define('Waffle.view.Map', {
     extend: 'Ext.Panel',
     alias: 'widget.mapview',
     config: {
+        title: 'Map',
         layout: 'fit',
         items: [
             {
@@ -54,11 +55,6 @@ Ext.define('Waffle.view.Map', {
                         });
                     }
                 }
-            },
-            {
-                xtype: 'toolbar',
-                docked: 'top',
-                ui: 'light'
             }
         ]
 
