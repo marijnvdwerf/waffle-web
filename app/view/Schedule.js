@@ -34,6 +34,21 @@ Ext.define('Waffle.view.Schedule', {
                 })]
             }
         ]);
+
+        Ext.Ajax.request({
+            url: "http://waffle.marijnvdwerf.nl/api/me",
+            method: "GET",
+            params:{"X-Authorization":"token "+"li2kmo3o6ugpb3onzecacrqfdx"},
+            disableCaching: true,
+            useDefaultXhrHeader:false,
+            success: function (msg) {
+                var response = msg.responseText;
+                console.log(response);
+            },
+            failure: function (msg) {
+                console.log(msg);
+            }
+        })
     }
 
 
