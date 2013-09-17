@@ -58,7 +58,7 @@ Ext.application({
         Ext.fly('appLoadingIndicator').destroy();
 
         // Initialize the login view
-        Ext.Viewport.add(Ext.create('Waffle.view.Schedule'));
+        Ext.Viewport.add(Ext.create('Waffle.view.Login'));
     },
 
     onUpdated: function() {

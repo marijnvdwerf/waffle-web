@@ -9,7 +9,25 @@ Ext.define('Waffle.view.Login', {
                 delegate: '#logInButton',
                 event: 'tap',
                 fn: function () {
-                    alert('Login button tapped');
+                    var userNameText = Ext.getCmp('userNameTextField').getValue();
+                    var passwordText = Ext.getCmp('passwordTextField').getValue();
+                    Ext.Ajax.request({
+                        url: "http://waffle.marijnvdwerf.nl/api/authenticate",
+                        method: "POST",
+                        params: {
+                            client_id:"TESTING_CLIENT_ID",
+                            pcn:userNameText,
+                            password:passwordText
+                        },
+                        disableCaching:false,
+                        useDefaultXhrHeader:false,
+                        success: function(response){
+                            alert("succeeded");
+                        },
+                        failure: function(response){
+                            alert("failed");
+                        }
+                    });
                 }
             }
         ],
@@ -31,14 +49,14 @@ Ext.define('Waffle.view.Login', {
                     {
                         xtype: 'textfield',
                         placeHolder: 'Username',
-                        itemId: 'userNameTextField',
+                        id: 'userNameTextField',
                         name: 'userNameTextField',
                         required: true
                     },
                     {
                         xtype: 'passwordfield',
                         placeHolder: 'Password',
-                        itemId: 'passwordTextField',
+                        id: 'passwordTextField',
                         name: 'passwordTextField',
                         required: true
                     }
