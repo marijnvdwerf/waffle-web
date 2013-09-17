@@ -31,9 +31,11 @@ Ext.define('Waffle.model.Lesson', {
             {
                 name: 'colour',
                 type: 'string',
-                defaultValue: '#abcdef'
+                defaultValue: 'green'
             }
-        ]
+        ],
+
+        belongsTo: 'Waffle.model.Schedule'
     }
 });
 

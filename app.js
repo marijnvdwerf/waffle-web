@@ -38,10 +38,12 @@ Ext.application({
     ],
 
     models: [
+        'Schedule',
         'Lesson'
     ],
 
     stores: [
+        'Schedules',
         'Lessons'
     ],
 
