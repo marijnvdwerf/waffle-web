@@ -4,7 +4,11 @@
 @import 'sencha-touch/default';
 @import 'sencha-touch/default/all';
 
+@import 'Ext.ux.TouchCalendarView';
+@import 'Ext.ux.TouchCalendarEvents';
+@import 'skin1';
+
 // Custom code goes here..
 
 // Examples of using the icon mixin:
-// @include icon('user');
+ @include icon('user');

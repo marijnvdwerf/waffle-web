@@ -15,7 +15,8 @@
 
 //<debug>
 Ext.Loader.setPath({
-    'Ext': 'touch/src'
+    'Ext': 'touch/src',
+    'Ext.ux': 'ux/TouchCalendar'
 });
 //</debug>
 
@@ -28,6 +29,10 @@ Ext.application({
 
     views: [
         'Main'
+    ],
+
+    models: [
+        'Lesson'
     ],
 
     icon: {
@@ -53,7 +58,7 @@ Ext.application({
         Ext.fly('appLoadingIndicator').destroy();
 
         // Initialize the login view
-        Ext.Viewport.add(Ext.create('Waffle.view.Map'));
+        Ext.Viewport.add(Ext.create('Waffle.view.Schedule'));
     },
 
     onUpdated: function() {
