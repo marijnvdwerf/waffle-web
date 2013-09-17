@@ -6,9 +6,8 @@ Ext.define('Waffle.view.Map', {
         items: [
             {
                 xtype: 'map',
-                useCurrentLocation: true,
                 mapOptions: {
-                    center: new google.maps.LatLng(37.381592, -122.135672),  //nearby San Fran
+                    center: new google.maps.LatLng(51.452031, 5.480751),  // Rachelsmolen 1
                     zoom: 17,
                     mapTypeId: google.maps.MapTypeId.ROADMAP,
                     navigationControl: true,
