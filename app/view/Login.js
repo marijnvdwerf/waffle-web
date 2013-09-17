@@ -55,5 +55,9 @@ Ext.define('Waffle.view.Login', {
                 text: 'Log In'
             }
         ]
+    },
+    onSignInFail: function() {
+        var label = this.down('#signInFailedLabel');
+        label.show();
     }
 });

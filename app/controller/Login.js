@@ -48,6 +48,6 @@ Ext.define('Waffle.controller.Login', {
     },
 
     onSignInFail: function () {
-
+        this.getLoginView().onSignInFail();
     }
 });
