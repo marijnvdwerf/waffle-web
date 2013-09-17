@@ -1,6 +1,9 @@
 Ext.define('Waffle.view.Main', {
     extend: 'Ext.navigation.View',
-    xtype: 'main',
+    alias: 'widget.mainview',
+    requires: [
+        'Waffle.view.Schedule'
+    ],
     config: {
         fullscreen: true,
         items: [

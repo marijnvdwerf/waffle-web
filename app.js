@@ -27,9 +27,14 @@ Ext.application({
         'Ext.MessageBox'
     ],
 
+    controllers: [
+        'App',
+        'Login'
+    ],
+
     views: [
         'Main',
-        'Schedule'
+        'Login'
     ],
 
     models: [
@@ -63,7 +68,11 @@ Ext.application({
         Ext.fly('appLoadingIndicator').destroy();
 
         // Initialize the login view
-        Ext.Viewport.add(Ext.create('Waffle.view.Login'));
+        Ext.Viewport.add([
+            { xtype: 'loginview' },
+            { xtype: 'mainview' }
+        ]);
+
     },
 
     onUpdated: function () {

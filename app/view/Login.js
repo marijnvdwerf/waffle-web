@@ -11,23 +11,7 @@ Ext.define('Waffle.view.Login', {
                 fn: function () {
                     var userNameText = Ext.getCmp('userNameTextField').getValue();
                     var passwordText = Ext.getCmp('passwordTextField').getValue();
-                    Ext.Ajax.request({
-                        url: "http://waffle.marijnvdwerf.nl/api/authenticate",
-                        method: "POST",
-                        params: {
-                            client_id:"TESTING_CLIENT_ID",
-                            pcn:userNameText,
-                            password:passwordText
-                        },
-                        disableCaching:false,
-                        useDefaultXhrHeader:false,
-                        success: function(response){
-                            alert("succeeded");
-                        },
-                        failure: function(response){
-                            alert("failed");
-                        }
-                    });
+                    this.fireEvent('attemptLogin', userNameText, passwordText);
                 }
             }
         ],
