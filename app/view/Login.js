@@ -1,6 +1,11 @@
 Ext.define('Waffle.view.Login', {
     extend: 'Ext.form.Panel',
     alias: 'widget.loginview',
+    requires: [
+        'Ext.Label',
+        'Ext.form.FieldSet',
+        'Ext.field.Password'
+    ],
     config: {
         title: 'Login',
 
