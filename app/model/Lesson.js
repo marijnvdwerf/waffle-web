@@ -5,7 +5,8 @@ Ext.define('Waffle.model.Lesson', {
         fields: [
             {
                 name: 'course',
-                type: 'string'
+                type: 'string',
+                defaultValue: '-'
             },
             {
                 name: 'teacher',
@@ -14,7 +15,8 @@ Ext.define('Waffle.model.Lesson', {
             },
             {
                 name: 'room',
-                type: 'string'
+                type: 'string',
+                defaultValue: '-'
             },
             {
                 name: 'start',
