@@ -7,16 +7,7 @@ Ext.define('Waffle.store.Lessons', {
 
     config: {
         storeId: 'Lessons',
-        model: 'Waffle.model.Lesson',
-        proxy: {
-            type: 'ajax',
-            url: 'data/lessons.json',
-            reader: {
-                type: 'json',
-                rootProperty: 'lessons'
-            }
-        },
-        autoLoad: true
+        model: 'Waffle.model.Lesson'
     }
 
 });

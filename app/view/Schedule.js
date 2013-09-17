@@ -14,6 +14,7 @@ Ext.define('Waffle.view.Schedule', {
     initialize: function () {
         this.callParent(arguments);
 
+        var lessonsStore = Ext.getStore('Lessons');
         this.setItems([
             {
                 xclass: 'Ext.ux.TouchCalendarView',
@@ -23,10 +24,10 @@ Ext.define('Waffle.view.Schedule', {
                 maxDate: Ext.Date.add(new Date(), Ext.Date.DAY, 60),
                 viewMode: 'day',
                 value: new Date(),
-                eventStore: Ext.getStore('Lessons'),
+                eventStore: lessonsStore,
 
                 plugins: [Ext.create('Ext.ux.TouchCalendarEvents', {
-                    eventBarTpl: '{event} - {location}'
+                    eventBarTpl: '<b>{course}</b> {teacher}<br/>{room}'
                 })]
             }
         ]);
