@@ -1,9 +1,9 @@
 /**
- * Ext.ux.TouchCalendarMonthEvents
+ * Waffle.libs.tc.TouchCalendarMonthEvents
  */
-Ext.define('Ext.ux.TouchCalendarMonthEvents', {
+Ext.define('Waffle.libs.tc.TouchCalendarMonthEvents', {
 
-    extend: 'Ext.ux.TouchCalendarEventsBase',
+    extend: 'Waffle.libs.tc.TouchCalendarEventsBase',
 
 	eventFilterFn: function(record, id, currentDateTime){
 		var startDate = Ext.Date.clearTime(record.get(this.getPlugin().getStartEventField()), true).getTime(),

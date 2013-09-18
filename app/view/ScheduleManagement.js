@@ -2,6 +2,10 @@ Ext.define('Waffle.view.ScheduleManagement', {
     extend: 'Ext.Panel',
     alias: 'widget.schedulemanagementview',
 
+    requires: [
+        'Ext.dataview.List'
+    ],
+
     config: {
 
         layout: {

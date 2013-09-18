@@ -6,21 +6,21 @@
  * @website        http://www.swarmonline.com
  */
 /**
- * @class Ext.ux.TouchCalendar
+ * @class Waffle.libs.tc.TouchCalendar
  * @author Stuart Ashworth
  *
  * For use with Sencha Touch 2
  * 
- * This extension wraps the Ext.ux.TouchCalendarView in a Ext.Carousel component and allows the calendar to respond to swipe
- * gestures to switch the displayed period. It works by creating 3 Ext.ux.TouchCalendarViews and dynamically creating/removing
+ * This extension wraps the Waffle.libs.tc.TouchCalendarView in a Ext.Carousel component and allows the calendar to respond to swipe
+ * gestures to switch the displayed period. It works by creating 3 Waffle.libs.tc.TouchCalendarViews and dynamically creating/removing
  * views as the user moves back/forward through time. 
  * 
- * ![Ext.ux.TouchCalendar Screenshot](http://www.swarmonline.com/Ext.ux.TouchCalendar/screenshots/Ext.ux.TouchCalendar-month-ss.png)
+ * ![Waffle.libs.tc.TouchCalendar Screenshot](http://www.swarmonline.com/Waffle.libs.tc.TouchCalendar/screenshots/Waffle.libs.tc.TouchCalendar-month-ss.png)
  * 
- * [Ext.ux.TouchCalendar Demo](http://www.swarmonline.com/Ext.ux.TouchCalendar/examples/Ext.ux.TouchCalendar.html)
+ * [Waffle.libs.tc.TouchCalendar Demo](http://www.swarmonline.com/Waffle.libs.tc.TouchCalendar/examples/Waffle.libs.tc.TouchCalendar.html)
  * 
  */
-Ext.define('Ext.ux.TouchCalendar',{
+Ext.define('Waffle.libs.tc.TouchCalendar',{
 	extend: 'Ext.carousel.Carousel',
 
 	xtype: 'calendar',
@@ -39,13 +39,13 @@ Ext.define('Ext.ux.TouchCalendar',{
 		enableSwipeNavigate: true,
 
 		/**
-		* @cfg {Boolean/Object} enableSimpleEvents True to enable the Ext.ux.TouchCalendarSimpleEvents plugin. When true the Ext.ux.TouchCalendarSimpleEvents JS and CSS files
+		* @cfg {Boolean/Object} enableSimpleEvents True to enable the Waffle.libs.tc.TouchCalendarSimpleEvents plugin. When true the Waffle.libs.tc.TouchCalendarSimpleEvents JS and CSS files
 		* must be included and an eventStore option, containing an Ext.data.Store instance, be given to the viewConfig. If an object is passed in this is used as the config for the plugin.
 		*/
 		enableSimpleEvents: false,
 
 		/**
-		* @cfg {Boolean/Object} enableEventBars True to enable the Ext.ux.TouchCalendarEvents plugin. When true the Ext.ux.TouchCalendarEvents JS and CSS files
+		* @cfg {Boolean/Object} enableEventBars True to enable the Waffle.libs.tc.TouchCalendarEvents plugin. When true the Waffle.libs.tc.TouchCalendarEvents JS and CSS files
 		* must be included and an eventStore option, containing an Ext.data.Store instance, be given to the viewConfig.  If an object is passed in this is used as the config for the plugin.
 		*/
 		enableEventBars: false,
@@ -114,10 +114,10 @@ Ext.define('Ext.ux.TouchCalendar',{
 
 		if(this.getEnableSimpleEvents()){
 			var config = Ext.isObject(this.getEnableSimpleEvents()) ? this.getEnableSimpleEvents() : {};
-			plugins.push(Ext.create('Ext.ux.TouchCalendarSimpleEvents', config));
+			plugins.push(Ext.create('Waffle.libs.tc.TouchCalendarSimpleEvents', config));
 		} else if (this.getEnableEventBars()){
 			var config = Ext.isObject(this.getEnableEventBars()) ? this.getEnableEventBars() : {};
-			plugins.push(Ext.create('Ext.ux.TouchCalendarEvents', config));
+			plugins.push(Ext.create('Waffle.libs.tc.TouchCalendarEvents', config));
 		}
 
 		Ext.apply(this._viewConfig, {
@@ -154,20 +154,20 @@ Ext.define('Ext.ux.TouchCalendar',{
 		// first out of view
 		var viewValue = this.getViewDate(origCurrentDate, -1);
 		items.push(
-		    Ext.create('Ext.ux.TouchCalendarView', Ext.applyIf({
+		    Ext.create('Waffle.libs.tc.TouchCalendarView', Ext.applyIf({
 		        currentDate: viewValue
 		      }, this.getViewConfig(viewValue)))
 		);
 
 		// active view
 		items.push(
-			Ext.create('Ext.ux.TouchCalendarView', Ext.ux.TouchCalendarView(this.getViewConfig(origCurrentDate)))
+			Ext.create('Waffle.libs.tc.TouchCalendarView', Waffle.libs.tc.TouchCalendarView(this.getViewConfig(origCurrentDate)))
 		);
 
 		// second out of view (i.e. third)
 		viewValue = this.getViewDate(origCurrentDate, 1);
 		items.push(
-			Ext.create('Ext.ux.TouchCalendarView', Ext.ux.TouchCalendarView(Ext.applyIf({
+			Ext.create('Waffle.libs.tc.TouchCalendarView', Waffle.libs.tc.TouchCalendarView(Ext.applyIf({
 		        currentDate: viewValue
 		    }, this.getViewConfig(viewValue))))
 		);
@@ -247,12 +247,12 @@ Ext.define('Ext.ux.TouchCalendar',{
 
 			if (direction === 'forward') {
 				this.remove(items.get(0));
-				var newCalendar = new Ext.ux.TouchCalendarView(this.getViewConfig(this.getViewDate(newCard.currentDate, 1)));
+				var newCalendar = new Waffle.libs.tc.TouchCalendarView(this.getViewConfig(this.getViewDate(newCard.currentDate, 1)));
 				this.add(newCalendar);
 			}
 			else {
 				this.remove(items.get(items.getCount() - 1));
-				var newCalendar = new Ext.ux.TouchCalendarView(this.getViewConfig(this.getViewDate(newCard.currentDate, -1)));
+				var newCalendar = new Waffle.libs.tc.TouchCalendarView(this.getViewConfig(this.getViewDate(newCard.currentDate, -1)));
 				this.insert(0, newCalendar);
 			}
 

@@ -1,7 +1,7 @@
 /**
- * Ext.ux.TouchCalendarEventsBase
+ * Waffle.libs.tc.TouchCalendarEventsBase
  */
-Ext.define('Ext.ux.TouchCalendarEventsBase', {
+Ext.define('Waffle.libs.tc.TouchCalendarEventsBase', {
 
     extend: 'Ext.Base',
 

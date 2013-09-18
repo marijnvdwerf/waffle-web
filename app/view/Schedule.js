@@ -3,9 +3,9 @@ Ext.define('Waffle.view.Schedule', {
     alias: 'widget.scheduleview',
 
     requires: [
-        'Ext.ux.TouchCalendarView',
-        'Ext.ux.TouchCalendarEvents',
-        'Ext.ux.TouchCalendarDayEvents',
+        'Waffle.libs.tc.TouchCalendarView',
+        'Waffle.libs.tc.TouchCalendarEvents',
+        'Waffle.libs.tc.TouchCalendarDayEvents',
         'Waffle.view.Lesson'
     ],
 
@@ -20,7 +20,7 @@ Ext.define('Waffle.view.Schedule', {
         var lessonsStore = Ext.getStore('Lessons');
         this.setItems([
             {
-                xclass: 'Ext.ux.TouchCalendarView',
+                xclass: 'Waffle.libs.tc.TouchCalendarView',
                 itemId: 'calendarView',
                 id: 'calendar',
                 minDate: Ext.Date.add(new Date(), Ext.Date.DAY, 0),
@@ -29,7 +29,7 @@ Ext.define('Waffle.view.Schedule', {
                 value: new Date(),
                 eventStore: lessonsStore,
 
-                plugins: [Ext.create('Ext.ux.TouchCalendarEvents', {
+                plugins: [Ext.create('Waffle.libs.tc.TouchCalendarEvents', {
                     eventBarTpl: '<b>{course}</b> {teacher}<br/>{room}'
                 })]
             }

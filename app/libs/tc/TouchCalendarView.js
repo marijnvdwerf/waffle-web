@@ -6,13 +6,13 @@
  * @website        http://www.swarmonline.com
  */
 /**
- * @class Ext.ux.TouchCalendarView
+ * @class Waffle.libs.tc.TouchCalendarView
  * @author Stuart Ashworth
  *
  * For use with Sencha Touch 2
  *
  */
-Ext.define('Ext.ux.TouchCalendarView', {
+Ext.define('Waffle.libs.tc.TouchCalendarView', {
 	
 	extend: 'Ext.Container',
 
@@ -327,14 +327,14 @@ Ext.define('Ext.ux.TouchCalendarView', {
 		
         /**
          * @event selectionchange Fires when the Calendar's selected date is changed
-         * @param {Ext.ux.TouchCalendarView} this
+         * @param {Waffle.libs.tc.TouchCalendarView} this
          * @param {Date} newDate The new selected date
          * @param {Date} oldDate The previously selected date
          */
 
         /**
          * @event periodchange Fires when the calendar changes to a different date period (i.e. switch using the arrows)
-         * @param {Ext.ux.TouchCalendarView} this
+         * @param {Waffle.libs.tc.TouchCalendarView} this
          * @param {Date} minDate New view's minimum date
          * @param {Date} maxDate New view's maximum date
          * @param {string} direction Direction that the view moved ('forward' or 'back')
@@ -384,7 +384,7 @@ Ext.define('Ext.ux.TouchCalendarView', {
 	 * @private
 	 */
 	initModel: function(){
-		if(!Ext.ModelManager.isRegistered('TouchCalendarViewModel')) // TODO: Throws an error in opening Ext.ux.TouchCalendar.html example?? 
+		if(!Ext.ModelManager.isRegistered('TouchCalendarViewModel')) // TODO: Throws an error in opening Waffle.libs.tc.TouchCalendar.html example??
 		{
 			Ext.define('TouchCalendarViewModel', {
 				extend: 'Ext.data.Model',
@@ -427,7 +427,7 @@ Ext.define('Ext.ux.TouchCalendarView', {
 
 		viewMode = viewMode.toUpperCase();
 
-        var viewModeFns = Ext.ux.TouchCalendarView[viewMode.toUpperCase()];
+        var viewModeFns = Waffle.libs.tc.TouchCalendarView[viewMode.toUpperCase()];
 
 		// Update the mode specific functions/values
         this.getStartDate = viewModeFns.getStartDate;
@@ -840,7 +840,7 @@ Ext.define('Ext.ux.TouchCalendarView', {
 				 * @return {Date}
 				 */
 				getStartDate: function(date){
-					return Ext.bind(Ext.ux.TouchCalendarView.WEEK.getStartDate, this)(new Date(date.getFullYear(), date.getMonth(), 1));
+					return Ext.bind(Waffle.libs.tc.TouchCalendarView.WEEK.getStartDate, this)(new Date(date.getFullYear(), date.getMonth(), 1));
 				},
 				
 				/**

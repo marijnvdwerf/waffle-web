@@ -71,7 +71,7 @@ Ext.define('Waffle.model.Schedule', {
             url: 'http://waffle.marijnvdwerf.nl/ical/',
             method: 'GET',
             params: {
-                class: this.get('item_id')
+                'class': this.get('item_id')
             },
             disableCaching: false,
             useDefaultXhrHeader: false,

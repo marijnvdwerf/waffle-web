@@ -6,19 +6,19 @@
  * @website        http://www.swarmonline.com
  */
 /**
- * @class Ext.ux.TouchCalendarEvents
+ * @class Waffle.libs.tc.TouchCalendarEvents
  * @author Stuart Ashworth
  *
  * For use with Sencha Touch 2
  * 
- * This plugin also allows a store to be bound to the Ext.ux.TouchCalendar and will display the store's events as bars spanning its relevant days. 
+ * This plugin also allows a store to be bound to the Waffle.libs.tc.TouchCalendar and will display the store's events as bars spanning its relevant days.
  * 
- * ![Ext.ux.TouchCalendarEvents Screenshot](http://www.swarmonline.com/Ext.ux.TouchCalendar/screenshots/Ext.ux.TouchCalendarEvents--month-ss.png)
+ * ![Waffle.libs.tc.TouchCalendarEvents Screenshot](http://www.swarmonline.com/Waffle.libs.tc.TouchCalendar/screenshots/Waffle.libs.tc.TouchCalendarEvents--month-ss.png)
  * 
- * [Ext.ux.TouchCalendarEvents Demo](http://www.swarmonline.com/Ext.ux.TouchCalendar/examples/Ext.ux.TouchCalendarEvents.html)
+ * [Waffle.libs.tc.TouchCalendarEvents Demo](http://www.swarmonline.com/Waffle.libs.tc.TouchCalendar/examples/Waffle.libs.tc.TouchCalendarEvents.html)
  * 
  */
-Ext.define('Ext.ux.TouchCalendarEvents', {
+Ext.define('Waffle.libs.tc.TouchCalendarEvents', {
 	extend: 'Ext.mixin.Observable',
 	config: {
 
@@ -242,15 +242,15 @@ Ext.define('Ext.ux.TouchCalendarEvents', {
 		switch(viewMode.toLowerCase()){
 
 			case 'month':
-				processorCls = 'Ext.ux.TouchCalendarMonthEvents';
+				processorCls = 'Waffle.libs.tc.TouchCalendarMonthEvents';
 				break;
 
 			case 'week':
-				processorCls = 'Ext.ux.TouchCalendarWeekEvents';
+				processorCls = 'Waffle.libs.tc.TouchCalendarWeekEvents';
 				break;
 
 			case 'day':
-				processorCls = 'Ext.ux.TouchCalendarDayEvents';
+				processorCls = 'Waffle.libs.tc.TouchCalendarDayEvents';
 				break;
 		}
 
