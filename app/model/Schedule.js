@@ -42,6 +42,28 @@ Ext.define('Waffle.model.Schedule', {
         ]
     },
 
+    updateColor: function () {
+        var allColors = [
+            '#DC4FAD',
+            '#AC193D',
+            '#D24726',
+            '#FF8F32',
+            '#82BA00',
+            '#008A17',
+            '#03B3B2',
+            '#008299',
+            '#5DB2FF',
+            '#0072C6',
+            '#4617B4',
+            '#8C0095'
+        ];
+        var index = allColors.indexOf(this.get('color')) + 1;
+        if (index >= allColors.length) {
+            index = 0;
+        }
+        this.set('color', allColors[index]);
+    },
+
     fetchLessons: function () {
         var schedule = this;
 

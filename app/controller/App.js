@@ -7,10 +7,24 @@ Ext.define('Waffle.controller.App', {
             'Lessons'
         ],
 
+        refs: {
+            mainView: 'mainview',
+            managementView: 'schedulemanagementview'
+        },
+
         control: {
             '#navigationView': {
                 push: 'onNavigationChange',
                 pop: 'onNavigationChange'
+            },
+            '#openScheduleManagement': {
+                tap: 'onTapManage'
+            },
+            '#scheduleList': {
+                itemtap: 'onTapSchedule'
+            },
+            '#closeScheduleManagement': {
+                tap: 'onTapCloseManage'
             },
             '#calendar': {
                 eventtap: 'onTapEvent'
@@ -49,12 +63,24 @@ Ext.define('Waffle.controller.App', {
     },
 
     onNavigationChange: function (navigationView) {
-        if(navigationView.getItems().length === 2) {
+        if (navigationView.getItems().length === 2) {
             // Schedule
             Ext.getCmp('manageSchedulesButton').setHidden(false);
         } else {
             Ext.getCmp('manageSchedulesButton').setHidden(true);
         }
+    },
+
+    onTapManage: function () {
+        Ext.Viewport.animateActiveItem(this.getManagementView(), { type: 'cover', direction: 'up' });
+    },
+
+    onTapSchedule: function (list, index, target, schedule, e, eOpts) {
+        schedule.updateColor();
+    },
+
+    onTapCloseManage: function () {
+        Ext.Viewport.animateActiveItem(this.getMainView(), { type: 'reveal', direction: 'down' });
     },
 
     onTapEvent: function (event) {

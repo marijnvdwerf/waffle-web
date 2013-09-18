@@ -34,7 +34,8 @@ Ext.application({
 
     views: [
         'Main',
-        'Login'
+        'Login',
+        'ScheduleManagement'
     ],
 
     models: [
@@ -72,7 +73,8 @@ Ext.application({
         // Initialize the login view
         Ext.Viewport.add([
             { xtype: 'loginview' },
-            { xtype: 'mainview' }
+            { xtype: 'mainview' },
+            { xtype: 'schedulemanagementview' }
         ]);
 
     },

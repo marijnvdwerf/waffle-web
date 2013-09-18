@@ -12,7 +12,7 @@ Ext.define('Waffle.view.Main', {
             items: [
                 {
                     xtype: 'button',
-                    id: 'manageSchedulesButton',
+                    id: 'openScheduleManagement',
                     text: 'Edit',
                     align: 'right',
                     hideAnimation: {
