@@ -5,10 +5,21 @@ Ext.define('Waffle.controller.App', {
         stores: [
             'Schedules',
             'Lessons'
-        ]
+        ],
+
+        control: {
+            '#calendar': {
+                eventtap: 'onTapEvent'
+            },
+            '#locateLesson': {
+                tap: 'onTapLocate'
+            }
+        }
     },
 
     token: null,
+
+    currentEvent: null,
 
     setToken: function (token) {
         this.token = token;
@@ -35,7 +46,20 @@ Ext.define('Waffle.controller.App', {
         });
     },
 
-    onScheduleStoreChanged: function() {
+    onTapEvent: function (event) {
+        this.currentEvent = event.data;
+
+        var detailsView = Ext.create('Waffle.view.Lesson');
+        Ext.getCmp('navigation').push(detailsView);
+        Ext.getCmp('lessonDetails').setData(this.currentEvent);
+    },
+
+    onTapLocate: function () {
+        var mapView = Ext.create('Waffle.view.Map');
+        Ext.getCmp('navigation').push(mapView);
+    },
+
+    onScheduleStoreChanged: function () {
         var lessonsStore = Ext.getStore('Lessons');
 
         var scheduleStore = Ext.getStore('Schedules');

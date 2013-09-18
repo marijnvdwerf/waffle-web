@@ -10,8 +10,12 @@ Ext.define('Waffle.view.Lesson', {
 
         items: [
             {
+                id: 'lessonDetails',
                 xtype: 'component',
-                html: 'Lesson details',
+                tpl: [
+                    '<h1>{course}</h1>',
+                    '<p>asdfsadffdsadfsvc;asvj;jn;adfsklnadfns;kn;adfsgkln;sdfgkl;n</p>'
+                ]
             },
             {
                 xtype: 'button',
@@ -29,7 +33,7 @@ Ext.define('Waffle.view.Lesson', {
                 event: 'tap',
                 fn: function () {
                     var mapView = Ext.create('Waffle.view.Map');
-                    this.up('main').push(mapView)
+                    Ext.getCmp('navigation').push(mapView)
                 }
             }
         ]
