@@ -61,6 +61,7 @@ Ext.define('Waffle.controller.App', {
         this.currentEvent = event.data;
 
         var detailsView = Ext.create('Waffle.view.Lesson');
+        detailsView.setData(this.currentEvent);
         Ext.getCmp('navigationView').push(detailsView);
         Ext.getCmp('lessonDetails').setData(this.currentEvent);
     },

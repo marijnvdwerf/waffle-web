@@ -41,6 +41,9 @@ Ext.define('Waffle.view.Lesson', {
                 }
             }
         ]
-    }
+    },
 
+    setData: function(event) {
+        this.setTitle(event.course);
+    }
 });
