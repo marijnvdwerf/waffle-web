@@ -5,7 +5,8 @@ Ext.define('Waffle.view.Schedule', {
     requires: [
         'Ext.ux.TouchCalendarView',
         'Ext.ux.TouchCalendarEvents',
-        'Ext.ux.TouchCalendarDayEvents'
+        'Ext.ux.TouchCalendarDayEvents',
+        'Waffle.view.Lesson'
     ],
 
     config: {

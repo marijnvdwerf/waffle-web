@@ -1,6 +1,10 @@
 Ext.define('Waffle.view.Lesson', {
     extend: 'Ext.Panel',
 
+    requires: [
+        'Waffle.view.Map'
+    ],
+
     config: {
         title: 'Lesson',
         flex: 2,

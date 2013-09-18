@@ -1,6 +1,11 @@
 Ext.define('Waffle.view.Map', {
     extend: 'Ext.Panel',
     alias: 'widget.mapview',
+
+    requires: [
+        'Ext.Map'
+    ],
+
     config: {
         title: 'Map',
         layout: 'fit',
