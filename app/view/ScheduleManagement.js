@@ -20,7 +20,7 @@ Ext.define('Waffle.view.ScheduleManagement', {
                 items: [
                     {
                         id: 'closeScheduleManagement',
-                        iconCls: 'delete1',
+                        iconCls: 'delete',
                         iconMask: true,
                         align: 'left'
                     }
