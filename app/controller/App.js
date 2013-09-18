@@ -8,6 +8,10 @@ Ext.define('Waffle.controller.App', {
         ],
 
         control: {
+            '#navigationView': {
+                push: 'onNavigationChange',
+                pop: 'onNavigationChange'
+            },
             '#calendar': {
                 eventtap: 'onTapEvent'
             },
@@ -44,17 +48,26 @@ Ext.define('Waffle.controller.App', {
         });
     },
 
+    onNavigationChange: function (navigationView) {
+        if(navigationView.getItems().length === 2) {
+            // Schedule
+            Ext.getCmp('manageSchedulesButton').setHidden(false);
+        } else {
+            Ext.getCmp('manageSchedulesButton').setHidden(true);
+        }
+    },
+
     onTapEvent: function (event) {
         this.currentEvent = event.data;
 
         var detailsView = Ext.create('Waffle.view.Lesson');
-        Ext.getCmp('navigation').push(detailsView);
+        Ext.getCmp('navigationView').push(detailsView);
         Ext.getCmp('lessonDetails').setData(this.currentEvent);
     },
 
     onTapLocate: function () {
         var mapView = Ext.create('Waffle.view.Map');
-        Ext.getCmp('navigation').push(mapView);
+        Ext.getCmp('navigationView').push(mapView);
     },
 
     onScheduleStoreChanged: function () {

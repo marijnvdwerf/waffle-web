@@ -37,7 +37,7 @@ Ext.define('Waffle.view.Lesson', {
                 event: 'tap',
                 fn: function () {
                     var mapView = Ext.create('Waffle.view.Map');
-                    Ext.getCmp('navigation').push(mapView)
+                    Ext.getCmp('navigationView').push(mapView)
                 }
             }
         ]
