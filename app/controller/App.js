@@ -26,8 +26,6 @@ Ext.define('Waffle.controller.App', {
     },
 
     setUser: function (jsonUser) {
-        console.log('Welkom ' + jsonUser.name);
-
         var scheduleStore = Ext.getStore('Schedules');
 
         jsonUser.schedules.forEach(function (scheduleData) {
@@ -64,7 +62,6 @@ Ext.define('Waffle.controller.App', {
 
         var scheduleStore = Ext.getStore('Schedules');
         scheduleStore.each(function (item, index, length) {
-            console.log(item.lessons().data.items);
             lessonsStore.add(item.lessons().data.items);
         });
     }
