@@ -11,13 +11,13 @@
 	 * @cfg  applicationId
 	 * This is the name namespace for your application. On IOS, this should match the name of your application in the Apple Provisioning Portal.
 	 */
-	"applicationId":"Waffle",
+	"applicationId":"edu.fontys.sm.codesoup.Waffle",
 
 	/**
 	 * @cfg  bundleSeedId
 	 * A ten character string which stands before aplication ID in Apple Provisioning Portal
 	 */
-	"bundleSeedId":"KPXFEPZ6EF",
+	"bundleSeedId":"CU3Z5M9BXQ",
 
 	/**
 	 * @cfg  versionString
@@ -82,7 +82,7 @@
 	 *  - Android
 	 *  - AndroidEmulator
 	 */
-	"platform":"iOSSimulator",
+	"platform":"iOS",
 
 	/**
 	 * @cfg  deviceType
