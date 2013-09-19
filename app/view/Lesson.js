@@ -17,9 +17,13 @@ Ext.define('Waffle.view.Lesson', {
                 id: 'lessonDetails',
                 xtype: 'component',
                 tpl: [
-                    '<h1>{course}</h1>',
-                    '<p>asdfsadffdsadfsvc;asvj;jn;adfsklnadfns;kn;adfsgkln;sdfgkl;n</p>'
-                ]
+                    '<h1 style="color: {colour}; text-transform: uppercase;">{course}</h1>',
+                    '<p>{teacher}</p>',
+                    '<p>{room}</p>',
+                    '<p>{start:date("j F Y")}</p>',
+                    '<p>{start:date("H:i")} - {end:date("H:i")}</p>'
+                ],
+                margin: "24px"
             },
             {
                 xtype: 'button',
