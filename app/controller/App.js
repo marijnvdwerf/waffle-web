@@ -65,9 +65,9 @@ Ext.define('Waffle.controller.App', {
     onNavigationChange: function (navigationView) {
         if (navigationView.getItems().length === 2) {
             // Schedule
-            Ext.getCmp('manageSchedulesButton').setHidden(false);
+            Ext.getCmp('openScheduleManagement').setHidden(false);
         } else {
-            Ext.getCmp('manageSchedulesButton').setHidden(true);
+            Ext.getCmp('openScheduleManagement').setHidden(true);
         }
     },
 
