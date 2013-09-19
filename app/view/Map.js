@@ -1,16 +1,21 @@
 Ext.define('Waffle.view.Map', {
     extend: 'Ext.Panel',
+    id: 'mapView',
     alias: 'widget.mapview',
 
     requires: [
         'Ext.Map'
     ],
 
+    currentPosition: null,
+    meCircle: null,
+
     config: {
         title: 'Map',
         layout: 'fit',
         items: [
             {
+                id: 'map',
                 xtype: 'map',
                 mapOptions: {
                     center: new google.maps.LatLng(51.452031, 5.480751),  // Rachelsmolen 1
@@ -22,8 +27,20 @@ Ext.define('Waffle.view.Map', {
                     }
                 },
 
+                setPosition: function (position) {
+                    var mapView = Ext.getCmp('mapView');
+
+                    mapView.currentPosition = position;
+
+                    if (mapView.meCircle !== null) {
+                        mapView.meCircle.setRadius(position.accuracy);
+                        mapView.meCircle.setCenter(new google.maps.LatLng(position.latitude, position.longitude));
+                    }
+                },
+
                 listeners: {
                     maprender: function (comp) {
+                        var mapView = Ext.getCmp('mapView');
                         var map = this.getMap();
 
                         // Construct the polygon
@@ -58,6 +75,21 @@ Ext.define('Waffle.view.Map', {
                             fillOpacity: 0.35,
                             map: map
                         });
+
+                        mapView.meCircle = new google.maps.Circle({
+                            strokeColor: '#33b5e5',
+                            strokeOpacity: 0.8,
+                            strokeWeight: 2,
+                            fillColor: '#33b5e5',
+                            fillOpacity: 0.35,
+                            map: map
+                        });
+
+                        if (mapView.currentPosition !== null) {
+                            var pos = mapView.currentPosition;
+                            mapView.meCircle.setRadius(pos.accuracy);
+                            mapView.meCircle.setCenter(new google.maps.LatLng(pos.latitude, pos.longitude));
+                        }
                     }
                 }
             }

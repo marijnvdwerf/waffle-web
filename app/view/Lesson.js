@@ -27,22 +27,11 @@ Ext.define('Waffle.view.Lesson', {
             },
             {
                 xtype: 'button',
-                itemId: 'showMapButton',
+                id: 'showMapButton',
                 ui: 'action',
                 padding: '10px',
                 margin: '8px',
                 text: 'Locate building'
-            }
-        ],
-
-        listeners: [
-            {
-                delegate: '#showMapButton',
-                event: 'tap',
-                fn: function () {
-                    var mapView = Ext.create('Waffle.view.Map');
-                    Ext.getCmp('navigationView').push(mapView)
-                }
             }
         ]
     },

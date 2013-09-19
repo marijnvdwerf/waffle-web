@@ -29,7 +29,7 @@ Ext.define('Waffle.controller.App', {
             '#calendar': {
                 eventtap: 'onTapEvent'
             },
-            '#locateLesson': {
+            '#showMapButton': {
                 tap: 'onTapLocate'
             }
         }
@@ -38,6 +38,10 @@ Ext.define('Waffle.controller.App', {
     token: null,
 
     currentEvent: null,
+
+    geolocationWatch: null,
+
+    currentPosition: null,
 
     setToken: function (token) {
         this.token = token;
@@ -59,6 +63,11 @@ Ext.define('Waffle.controller.App', {
             removerecords: this.onScheduleStoreChanged,
             updaterecord: this.onScheduleStoreChanged,
             scope: this
+        });
+
+        var me = this;
+        this.geolocationWatch = navigator.geolocation.watchPosition(function (coords) {
+            me.onPositionChange(coords);
         });
     },
 
@@ -93,8 +102,22 @@ Ext.define('Waffle.controller.App', {
     },
 
     onTapLocate: function () {
+        var oldMap = Ext.getCmp('mapView');
+        if(oldMap) {
+            oldMap.destroy();
+        }
         var mapView = Ext.create('Waffle.view.Map');
+        Ext.getCmp('map').setPosition(this.currentPosition);
         Ext.getCmp('navigationView').push(mapView);
+    },
+
+    onPositionChange: function (pos) {
+        this.currentPosition = pos.coords;
+
+        var map = Ext.getCmp('map');
+        if (map !== undefined) {
+            map.setPosition(this.currentPosition);
+        }
     },
 
     onScheduleStoreChanged: function () {
