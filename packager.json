@@ -56,14 +56,14 @@
 	 * @required
 	 * This is location of your Sencha Touch 2 application, relative to this configuration file.
 	 */
-	"inputPath":"./",
+	"inputPath":"./build/Waffle/package",
 
 	/**
 	 * @cfg  outputPath
 	 * @required
 	 * This is where the built application file with be saved. Make sure that output path is not in your input path, you may get into endless recursive copying
 	 */
-	"outputPath":"../build/",
+	"outputPath":"./build/Waffle",
 
 	/**
 	 * @cfg  configuration
