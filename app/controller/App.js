@@ -102,13 +102,12 @@ Ext.define('Waffle.controller.App', {
     },
 
     onTapLocate: function () {
-        console.log("testse");
         var oldMap = Ext.getCmp('mapView');
-        if(oldMap) {
+        if (oldMap) {
             oldMap.destroy();
         }
         var mapView = Ext.create('Waffle.view.Map');
-        Ext.getCmp('map').setPosition(this.currentPosition);
+        mapView.setPosition(this.currentPosition);
         Ext.getCmp('navigationView').push(mapView);
     },
 

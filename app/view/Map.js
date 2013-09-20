@@ -27,17 +27,6 @@ Ext.define('Waffle.view.Map', {
                     }
                 },
 
-                setPosition: function (position) {
-                    var mapView = Ext.getCmp('mapView');
-
-                    mapView.currentPosition = position;
-
-                    if (mapView.meCircle !== null) {
-                        mapView.meCircle.setRadius(position.accuracy);
-                        mapView.meCircle.setCenter(new google.maps.LatLng(position.latitude, position.longitude));
-                    }
-                },
-
                 listeners: {
                     maprender: function (comp) {
                         var mapView = Ext.getCmp('mapView');
@@ -95,5 +84,14 @@ Ext.define('Waffle.view.Map', {
             }
         ]
 
+    },
+
+    setPosition: function (position) {
+        this.currentPosition = position;
+
+        if (this.meCircle !== null) {
+            this.meCircle.setRadius(position.accuracy);
+            this.meCircle.setCenter(new google.maps.LatLng(position.latitude, position.longitude));
+        }
     }
 });
