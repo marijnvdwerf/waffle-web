@@ -7,7 +7,7 @@ Ext.define('Waffle.view.Login', {
         'Ext.field.Password'
     ],
     config: {
-        title: 'Login',
+        title: 'Inloggen',
 
         listeners: [
             {
@@ -24,27 +24,27 @@ Ext.define('Waffle.view.Login', {
         items: [
             {
                 xtype: 'label',
-                html: 'Login failed. Please enter the correct credentials.',
+                html: 'Inloggen mislukt. Controleer je PCN en wachtwoord.',
                 itemId: 'signInFailedLabel',
                 hidden: true,
                 hideAnimation: 'fadeOut',
                 showAnimation: 'fadeIn',
-                style: 'color:#990000;margin:5px 0px;'
+                style: 'background-color:#ff4444;color:#fff;margin:15px 0px;padding:5px 15px'
             },
             {
                 xtype: 'fieldset',
-                title: 'Login Example',
+                title: 'Aanmelden',
                 items: [
                     {
                         xtype: 'textfield',
-                        placeHolder: 'Username',
+                        placeHolder: 'PCN',
                         id: 'userNameTextField',
                         name: 'userNameTextField',
                         required: true
                     },
                     {
                         xtype: 'passwordfield',
-                        placeHolder: 'Password',
+                        placeHolder: 'Wachtwoord',
                         id: 'passwordTextField',
                         name: 'passwordTextField',
                         required: true
@@ -57,7 +57,7 @@ Ext.define('Waffle.view.Login', {
                 ui: 'action',
                 padding: '10px',
                 margin: '8px',
-                text: 'Log In'
+                text: 'Inloggen'
             }
         ]
     },

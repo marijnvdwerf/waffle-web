@@ -27,7 +27,7 @@ Ext.define('Waffle.view.Lesson', {
             },
             {
                 xtype: 'button',
-                id: 'showMapButton',
+                action: 'showMapButton',
                 ui: 'action',
                 padding: '10px',
                 margin: '8px',

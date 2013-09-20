@@ -29,7 +29,7 @@ Ext.define('Waffle.controller.App', {
             '#calendar': {
                 eventtap: 'onTapEvent'
             },
-            '#showMapButton': {
+            'button[action=showMapButton]': {
                 tap: 'onTapLocate'
             }
         }
@@ -102,6 +102,7 @@ Ext.define('Waffle.controller.App', {
     },
 
     onTapLocate: function () {
+        console.log("testse");
         var oldMap = Ext.getCmp('mapView');
         if(oldMap) {
             oldMap.destroy();

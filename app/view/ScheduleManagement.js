@@ -16,7 +16,7 @@ Ext.define('Waffle.view.ScheduleManagement', {
             {
                 xtype: 'titlebar',
                 docked: 'top',
-                title: 'Schedules',
+                title: 'Roosters',
                 items: [
                     {
                         id: 'closeScheduleManagement',
@@ -31,7 +31,7 @@ Ext.define('Waffle.view.ScheduleManagement', {
                 xtype: 'list',
                 flex: 1,
                 disableSelection: true,
-                itemTpl: '<b style="color: {color}">{item_id}</b> {item_name}',
+                itemTpl: '<b style="color: {color}; text-transform:uppercase;">{item_id}</b> {item_name}',
                 store: 'Schedules'
             }
         ]
